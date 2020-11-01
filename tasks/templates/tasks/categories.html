@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Список категорий{% endblock %}
+
+{% block main_content %}
+  <h1>Список категорий</h1>
+  <ul>
+  {% for cat in categories %}
+    {% if cat.todos_count %}
+    <li><a href={% url "tasks:list_by_cat" cat.slug %}>{{ cat.name }}</a> ({{ cat.todos_count }})</li>
+    {% else %}
+    <li>{{ cat.name }} ({{ cat.todos_count }})</li>
+    {% endif %}
+  {% empty %}
+    <p>Список с категориям пуст. Попробуйте добавить их из админки</p>
+  {% endfor %}
+  </ul>
+{% endblock %}

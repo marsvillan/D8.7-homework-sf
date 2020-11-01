@@ -1,0 +1,6 @@
+{
+  "name": "Django signals and cache",
+  "description": "SkillFactory HomeWork D8",
+  "image": "heroku/python",
+  "keywords": ["python", "django" ]
+}
